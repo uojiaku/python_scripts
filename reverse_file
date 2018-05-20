@@ -1,0 +1,12 @@
+#!/root/miniconda3/envs/genesis/bin/python
+
+import argparse
+
+parser = argparse.ArgumentParser("description=Reverse file")
+parser.add_argument('Filename', help='file to read')
+parser.add_argument('--limit', '-l', type=int, help='limit to read')
+parser.add_argument('--version', '-v', action='version',version='%(prog)s 1.0')
+
+args = parser.parse_args()
+print (args)
+
