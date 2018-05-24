@@ -1,0 +1,24 @@
+#!/root/miniconda3/envs/genesis/bin/python
+
+import argparse
+
+parser = argparse.ArgumentParser('description=File to read')
+parser.add_argument('Filename', help='file to read' )
+parser.add_argument('--limit', '-l', type=int, help='limit files read' )
+parser.add_argument('--version', '-v', action='version', version='%(prog)s 1.0' )
+
+
+args = parser.parse_args()
+#print (args)
+
+
+with open(args.Filename) as f:
+  lines = f.readlines()
+  lines.reverse()
+
+
+  if args.limit:
+    lines = lines[:args.limit]
+
+  for lines in lines:
+    print(lines.strip()[::-1])
